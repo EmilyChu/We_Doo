@@ -13,13 +13,13 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :bachelorette do 
+  scope :bachelorette do 
     resources :posts do
       resources :comments do
       end
     end
   end
 
-  resources :bridalshower
+  #resources :bridalshower
 
 end

@@ -30,6 +30,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      #FIXME add profile pic
+      t.string  :hometown 
+      t.integer :years   #how long you've known the bride/groom
+      t.text    :story   #how you guys met/your story
+      t.integer :votes_left, default: 3, null: false   #for dress votes
 
       t.timestamps
     end
