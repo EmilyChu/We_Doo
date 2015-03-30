@@ -17,6 +17,7 @@ gem 'activesupport'
 gem 'slim-rails'
 gem 'httparty'
 # gem 'twitter-bootstrap-rails'
+gem 'yelp', require: 'yelp'
 
 group :development, :test do
   gem 'spring'
