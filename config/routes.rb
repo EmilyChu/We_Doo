@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'application#home'
 
   resources :profile
+
   resources :dress do 
     member do 
       post  :vote
@@ -12,9 +13,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts do
-    resources :comments do
+  namespace :bachelorette do 
+    resources :posts do
+      resources :comments do
+      end
     end
   end
+
+  resources :bridalshower
 
 end
