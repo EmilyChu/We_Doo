@@ -41,6 +41,12 @@ class PostsController < ActionController::Base
     redirect_to posts_path
   end
 
+  # def search
+  #   parameters = {term: "restaurants", limit: 10, category_filter: "french"}
+  #   #parameters = { term: params[:term], limit: 10 }
+  #   render json: Yelp.client.search("San Francisco", parameters)
+  # end
+
   private
     def post_params
       params.require(:post).permit(:title, :body)

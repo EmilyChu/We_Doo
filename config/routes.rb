@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :comments do
       end
     end
+    get '/yelp' => 'posts#search', as: 'search_yelp'
   end
 
   #resources :bridalshower

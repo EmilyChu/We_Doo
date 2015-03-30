@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.integer :years   #how long you've known the bride/groom
       t.text    :story   #how you guys met/your story
       t.integer :votes_left, default: 3, null: false   #for dress votes
-
+      
       t.timestamps
     end
 
