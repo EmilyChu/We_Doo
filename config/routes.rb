@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :dress do 
     member do 
-      post  :vote
+      post    :vote
       post    :favorite
       delete  :unfavorite
     end
