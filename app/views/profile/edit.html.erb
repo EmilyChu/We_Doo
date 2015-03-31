@@ -2,7 +2,9 @@
   <div class="col-sm-10">
     <h2>Edit Your Profile<small></small></h2>
     <p class="lead">Input data into the fields where you want your data overwritten.</p>
-    <form class="form-horizontal" action="/users/profile/edit" method="POST" role="form">
+    <form class="form-horizontal" action="<%= profile_path(current_user.id) %>" method="POST" role="form">
+
+
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Username</label>
@@ -21,10 +23,10 @@
       <div class="form-group">
         <label for="home_town" class="col-sm-2 control-label">Hometown</label>
         <div class="col-sm-6">
-          <select class="form-control" name="home_town" value="<%= current_user.home_town %>" id="home_town">
+          <select class="form-control" name="home_town" value="<%= current_user.hometown %>" id="home_town">
             <option value=""></option>
             <% @states.each do |state| %> 
-              <% if current_user.home_town == state["abbr"] %>
+              <% if current_user.hometown == state["abbr"] %>
                 <%= "<option value=\"#{state["abbr"]}\" selected>#{state["name"]}</option>" %>
               <% else %>
                 <%= "<option value=\"#{state["abbr"]}\">#{state["name"]}</option>" %>
@@ -33,14 +35,6 @@
           </select>   
         </div>
         <p class="help-block">Select your home town.</p>
-      </div>
-
-      <div class="form-group">
-        <label for="avatar_url" class="col-sm-2 control-label">Avatar URL</label>
-        <div class="col-sm-6">
-          <input class="form-control" name="avatar_url" value="<%= current_user.avatar_url %>">
-        </div>
-        <p class="help-block">Right click any image and select "Copy Image URL".</p>
       </div>
 
       <div class="form-group">

@@ -3,6 +3,7 @@ class ProfileController < ActionController::Base
   end
 
   def edit
+    @states = Madison.states
   end
 
 end

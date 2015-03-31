@@ -1,4 +1,5 @@
 class PostsController < ActionController::Base
+  # include Yelp::V2::Search::Request
 
   def index
     @posts = Post.all
@@ -42,9 +43,15 @@ class PostsController < ActionController::Base
   end
 
   # def search
-  #   parameters = {term: "restaurants", limit: 10, category_filter: "french"}
-  #   #parameters = { term: params[:term], limit: 10 }
-  #   render json: Yelp.client.search("San Francisco", parameters)
+  #   client = Yelp::Client.new
+  #   request = GeoPoint.new(
+  #              :term => 'thai',
+  #              :category_filter => 'food,restaurants',
+  #              :limit => 10,
+  #              :radius_filter => 8047,
+  #              :latitude => params[:latitude],
+  #              :longitude => params[:longitude])
+  #   @response = client.search(request)
   # end
 
   private
