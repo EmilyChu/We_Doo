@@ -20,6 +20,9 @@ gem 'httparty'
 gem 'yelpster'
 gem 'madison'
 
+gem 'carrierwave'
+gem 'fog-aws'
+
 group :development, :test do
   gem 'spring'
   gem 'better_errors'
