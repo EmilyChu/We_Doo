@@ -1,0 +1,6 @@
+<h3> display uploaded dresses here</h3>
+
+<% @dress.each do |d| %>
+  <%= image_tag dress.image_url(:thumb).to_s %>
+  <%= d.name %>
+<% end %>
