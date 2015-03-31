@@ -19,6 +19,6 @@ class DressController < ActionController::Base
 
   private 
     def dress_params
-      params.require(:dress).permit(:name, :image)
+      params.require(:dress).permit(:name, :image, :remote_image_url)
     end
 end
