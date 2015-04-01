@@ -1,5 +1,9 @@
 class DressController < ActionController::Base
 
+  def index
+    @dress = Dress.all
+  end
+
   def new
     @dress = Dress.new
   end

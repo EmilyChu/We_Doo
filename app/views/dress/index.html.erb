@@ -1,0 +1,4 @@
+<%= @dress.each do |d| %>
+  <%= d.name %>
+  <%= image_tag d.image_url(:thumb).to_s %>
+<% end %>
