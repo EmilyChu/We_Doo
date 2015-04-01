@@ -22,4 +22,10 @@ class User < ActiveRecord::Base
   def favorite dress
     favorites.create! dress_id: dress.id
   end
+
+  def unfavorite dress 
+    x = Favorite.find_by(dress_id: dress.id)
+    x.delete
+
+  end
 end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     member do 
       post    :vote
       post    :favorite
-      delete  :unfavorite
+      patch   :unfavorite  #FIXME patch instead of delete? actually...don't need route??
     end
   end
 

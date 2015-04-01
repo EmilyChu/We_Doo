@@ -2,6 +2,8 @@ class DressController < ActionController::Base
 
   def index
     @dress = Dress.all
+    favorites = Favorite.all
+    @faves = favorites.map { |f| f.dress_id }
   end
 
   def new
@@ -36,9 +38,18 @@ class DressController < ActionController::Base
     dress = Dress.find(params[:id])
     if current_user.bride
       current_user.favorite dress
+      redirect_to :back
       flash[:notice] = "This dress has been favorited!"
+    end
+  end
+
+  def unfavorite
+    dress = Dress.find(params[:id])
+    if current_user.bride
+      current_user.unfavorite dress
+      flash[:notice] = "This dress has been UNfavorited!"
     else
-      flash[:error] = "Only the bride is allowed to favorite a dress."
+      flash[:error] = "Only the bride is allowed to UNfavorite a dress."
     end
     redirect_to :back
   end
