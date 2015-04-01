@@ -1,4 +1,23 @@
-<%= @dress.each do |d| %>
-  <%= d.name %>
-  <%= image_tag d.image_url(:thumb).to_s %>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Dress Moniker</th>
+      <th>Dress Preview</th>
+      <% if current_user %>
+        <th>Vote</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @dress.each do |d| %>
+      <tr>
+        <td><%= d.name %></td>
+        <td><%= image_tag d.image_url(:thumb).to_s %></td>
+        <td><%= d.votes.count %></td>
+        <% if current_user %>
+          <td><%= button_to "Vote", vote_dress_path(d), class: "btn btn-default" %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

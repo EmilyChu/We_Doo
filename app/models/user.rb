@@ -9,4 +9,11 @@ class User < ActiveRecord::Base
 
   has_many :votes
   has_many :dresses
+
+  def vote_for dress 
+    if votes_left > 0
+      votes.create! dress_id: dress.id 
+      update votes_left: votes_left - 1
+    end
+  end
 end

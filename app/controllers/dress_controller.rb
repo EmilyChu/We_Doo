@@ -21,6 +21,17 @@ class DressController < ActionController::Base
     @dress = Dress.find(params[:id])
   end
 
+  def vote
+    dress = Dress.find(params[:id])
+    if current_user.vote_for dress
+      #FIXME flash messages aren't showing up?
+      flash[:notice] = "Your vote has been recorded!"
+    else
+      flash[:error] = "You are out of votes!"
+    end
+    redirect_to :back
+  end
+
   private 
     def dress_params
       params.require(:dress).permit(:name, :image, :remote_image_url)
