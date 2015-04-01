@@ -17,6 +17,13 @@
         <% if current_user %>
           <td><%= button_to "Vote", vote_dress_path(d), class: "btn btn-default" %></td>
         <% end %>
+        <td>
+          <% if d.favorites.count == 0  %>
+            <%= button_to "Favorite", favorite_dress_path(d), class: "btn btn-default" %>
+          <% else %>
+            <button class="btn btn-success">Bride Favorited</button>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

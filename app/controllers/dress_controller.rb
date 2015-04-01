@@ -32,6 +32,17 @@ class DressController < ActionController::Base
     redirect_to :back
   end
 
+  def favorite
+    dress = Dress.find(params[:id])
+    if current_user.bride
+      current_user.favorite dress
+      flash[:notice] = "This dress has been favorited!"
+    else
+      flash[:error] = "Only the bride is allowed to favorite a dress."
+    end
+    redirect_to :back
+  end
+
   private 
     def dress_params
       params.require(:dress).permit(:name, :image, :remote_image_url)

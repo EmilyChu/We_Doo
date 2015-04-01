@@ -3,6 +3,7 @@ class Dress < ActiveRecord::Base
 
   belongs_to :user
   has_many   :votes
+  has_many   :favorites
 
   mount_uploader :image, AvatarUploader
 end
