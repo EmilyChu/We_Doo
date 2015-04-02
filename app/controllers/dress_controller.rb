@@ -1,4 +1,4 @@
-class DressController < ActionController::Base
+class DressController < ApplicationController
 
   def index
     @dress = Dress.all
@@ -15,7 +15,7 @@ class DressController < ActionController::Base
     if @dress.save
       redirect_to dress_path(@dress)
     else
-      render :new #redirect_to dress_path(@dress)
+      render :new
     end
   end
 
@@ -26,7 +26,6 @@ class DressController < ActionController::Base
   def vote
     dress = Dress.find(params[:id])
     if current_user.vote_for dress
-      #FIXME flash messages aren't showing up?
       flash[:notice] = "Your vote has been recorded!"
     else
       flash[:error] = "You are out of votes!"

@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= @dress.each do |d| %>
+    <% @dress.each do |d| %>
       <tr>
         <td><%= d.name %></td>
         <td><%= image_tag d.image_url(:thumb).to_s %></td>

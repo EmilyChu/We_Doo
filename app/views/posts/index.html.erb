@@ -24,3 +24,26 @@
     <% end %>
   </tbody>
 </table>
+
+<div>
+  <%= form_tag search_yelp_path, action: "search", method: "get" do %>
+    <%# label :term %>
+    <%= text_field_tag :term %>
+    <%# label :category_filter %>
+    <%= text_field_tag :category_filter %>
+    <button>Search</button>
+  <% end %> 
+</div>
+
+<script type="application/javascript">
+  $(document).ready(function() {
+    $('form').submit(function(e) {
+      e.preventDefault();
+      var url = $(this).attr("action");
+      var formData = $(this).serialize();
+      $.getJSON(url, formData, function(response) {
+        console.log(response);
+      })
+    });
+  });
+</script>

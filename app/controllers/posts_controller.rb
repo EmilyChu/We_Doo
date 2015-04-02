@@ -1,5 +1,5 @@
-class PostsController < ActionController::Base
-  # include Yelp::V2::Search::Request
+class PostsController < ApplicationController
+  include Yelp::V2::Search::Request
 
   def index
     @posts = Post.all
@@ -42,17 +42,18 @@ class PostsController < ActionController::Base
     redirect_to posts_path
   end
 
-  # def search
-  #   client = Yelp::Client.new
-  #   request = GeoPoint.new(
-  #              :term => 'thai',
-  #              :category_filter => 'food,restaurants',
-  #              :limit => 10,
-  #              :radius_filter => 8047,
-  #              :latitude => params[:latitude],
-  #              :longitude => params[:longitude])
-  #   @response = client.search(request)
-  # end
+  def search
+    client = Yelp::Client.new
+    request = GeoPoint.new(
+               :term => 'thai',
+               :category_filter => 'food,restaurants',
+               :limit => 10,
+               :radius_filter => 8047,
+               :latitude => 38.854082, #params[:latitude],
+               :longitude =>  -77.048884) #params[:longitude])
+    @response = client.search(request)
+    render json: { results: [] }
+  end
 
   private
     def post_params
