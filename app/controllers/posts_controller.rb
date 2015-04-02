@@ -45,14 +45,15 @@ class PostsController < ApplicationController
   def search
     client = Yelp::Client.new
     request = GeoPoint.new(
-               :term => 'thai',
-               :category_filter => 'food,restaurants',
+               :term => params[:term],
+               :category_filter => params[:category_filter],
                :limit => 10,
                :radius_filter => 8047,
                :latitude => 38.854082, #params[:latitude],
                :longitude =>  -77.048884) #params[:longitude])
-    @response = client.search(request)
-    render json: { results: [] }
+    response = client.search(request)
+    @result = response["businesses"]
+    #render json: { results: [] }
   end
 
   private

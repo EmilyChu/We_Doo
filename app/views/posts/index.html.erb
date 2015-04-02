@@ -27,23 +27,36 @@
 
 <div>
   <%= form_tag search_yelp_path, action: "search", method: "get" do %>
-    <%# label :term %>
+    <%# label :term #put in placeholder styling  %>
     <%= text_field_tag :term %>
-    <%# label :category_filter %>
-    <%= text_field_tag :category_filter %>
+    <%# label :category_filter #put in placeholder styling %>
+    <%= text_field_tag :category_filter%>
     <button>Search</button>
-  <% end %> 
+  <% end %>
+  <div id="yelp_search_results"></div>
 </div>
 
 <script type="application/javascript">
+  var add_search_results = function(response) {
+    console.log(response);
+    var yelpHTML = '<ul class="bulleted">';
+    $.each(response, function (index, result){
+      yelpHTML += '<li>'+result.name+" "+result.address[0]+", "+result.address[1]+'</li>';
+    });
+    yelpHTML += '</ul>';
+    $('#yelp_search_results').append(yelpHTML);
+  };
+
   $(document).ready(function() {
     $('form').submit(function(e) {
       e.preventDefault();
       var url = $(this).attr("action");
       var formData = $(this).serialize();
-      $.getJSON(url, formData, function(response) {
-        console.log(response);
-      })
+      $.ajax(url, {
+        data : formData,
+        type: "GET",
+        success: add_search_results
+      });
     });
   });
 </script>
