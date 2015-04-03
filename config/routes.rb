@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :availabilities
+
   devise_for :users
 
   root 'application#home'

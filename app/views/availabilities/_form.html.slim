@@ -1,0 +1,15 @@
+= form_for @availability do |f|
+  - if @availability.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@availability.errors.count, "error")} prohibited this availability from being saved:"
+      ul
+        - @availability.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :start_at
+    = f.datetime_select :start_at
+  .actions = f.submit

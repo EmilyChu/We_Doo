@@ -16,7 +16,7 @@ gem 'figaro'
 gem 'activesupport'
 gem 'slim-rails'
 gem 'httparty'
-# gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails'
 gem 'yelpster'
 gem 'madison'
 
@@ -24,6 +24,8 @@ gem 'rmagick'
 gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem "simple_calendar", "~> 1.1.0"
 
 group :development, :test do
   gem 'spring'

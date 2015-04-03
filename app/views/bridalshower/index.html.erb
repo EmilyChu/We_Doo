@@ -1,1 +1,11 @@
 <h3> Availability </h3>
+
+<%= month_calendar table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"}, events: @availability do |date, available| %>
+  <%= date.strftime("%d") %>
+
+   <% available.each do |a| %>
+    <div>
+      <%= a.name %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,6 +1,7 @@
 class BridalshowerController < ApplicationController
-  def index 
+  def index
+    @availability = Availability.all
   end
 
-  
+
 end
