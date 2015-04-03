@@ -21,6 +21,6 @@ Rails.application.routes.draw do
     get '/yelp' => 'posts#search', as: 'search_yelp'
   end
 
-  #resources :bridalshower
+  resources :bridalshower
 
 end
