@@ -21,11 +21,13 @@
         </td>
         <td>
           <% if @faves.include? d.id %>
-            <%= form_tag unfavorite_dress_path(d), method: :patch %>
-            <button class="btn btn-default">Unfavorite</button>
+            <%= form_tag unfavorite_dress_path(d), method: :patch do %>
+              <button class="btn btn-default">Unfavorite</button>
+            <% end %>
           <% else %>
-            <%= form_tag favorite_dress_path(d), method: :post %>
-            <button class="btn btn-default">Favorite</button>
+            <%= form_tag favorite_dress_path(d), method: :post do %>
+              <button class="btn btn-default">Favorite</button>
+            <% end %>
           <% end %>
         </td>
       </tr>

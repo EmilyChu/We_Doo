@@ -34,6 +34,7 @@ class DressController < ApplicationController
   end
 
   def favorite
+    binding.pry
     dress = Dress.find(params[:id])
     if current_user.bride
       current_user.favorite dress
@@ -43,6 +44,7 @@ class DressController < ApplicationController
   end
 
   def unfavorite
+    binding.pry
     dress = Dress.find(params[:id])
     if current_user.bride
       current_user.unfavorite dress
