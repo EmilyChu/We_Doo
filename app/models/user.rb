@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   def vote_for dress 
     if votes_left > 0
       votes.create! dress_id: dress.id 
+       binding.pry
       update votes_left: votes_left - 1
     end
   end

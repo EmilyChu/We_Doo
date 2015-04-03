@@ -1,4 +1,4 @@
-class ProfileController < ActionController::Base
+class ProfileController < ApplicationController
   def new
   end
 

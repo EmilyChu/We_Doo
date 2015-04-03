@@ -14,9 +14,11 @@
         <td><%= d.name %></td>
         <td><%= image_tag d.image_url(:thumb).to_s %></td>
         <td><%= d.votes.count %></td>
-        <% if current_user %>
-          <td><%= button_to "Vote", vote_dress_path(d), class: "btn btn-default" %></td>
-        <% end %>
+        <td>
+          <% if current_user %>
+            <%= button_to "Vote", vote_dress_path(d), class: "btn btn-default" %>
+          <% end %>
+        </td>
         <td>
           <% if @faves.include? d.id %>
             <%= form_tag unfavorite_dress_path(d), method: :patch %>
