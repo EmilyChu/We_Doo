@@ -1,22 +1,9 @@
 <h2>Edit Your Profile</h2>
 <p>Input data into the fields where you want your data overwritten.</p>
 
-<% form_for :profile, url: profile_path(current_user.id), method: :patch do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :hometown %><br>
-    <%= f.text_field :hometown %>
-  </p>
-  <p>
-    <%= f.label :story %><br>
-    <%= f.text_field :story %>
-  </p>
+<%= form_for @profile, url: profile_path(@profile), method: :patch do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :hometown %>
+  <%= f.text_field :story %> 
   <%= f.submit %>
 <% end %>
