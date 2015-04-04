@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   end
 
   resources :bridalshower
-
+  resources :availabilities
 end
