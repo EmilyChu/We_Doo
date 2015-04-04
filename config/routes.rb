@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :availabilities
-
   devise_for :users
 
   root 'application#home'
@@ -24,5 +22,5 @@ Rails.application.routes.draw do
   end
 
   resources :bridalshower
-
+  resources :availabilities
 end

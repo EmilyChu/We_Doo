@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @availability.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @availability.start_at %>
+</p>
+
+<%= link_to 'Edit', edit_bridalshower_path(@availability) %> |
+<%= link_to 'Back', new_bridalshower_path %>
