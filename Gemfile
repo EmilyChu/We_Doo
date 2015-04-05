@@ -14,7 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'figaro'
 gem 'activesupport'
-gem 'slim-rails'
+#gem 'slim-rails'
 gem 'httparty'
 gem 'twitter-bootstrap-rails'
 gem 'yelpster'
