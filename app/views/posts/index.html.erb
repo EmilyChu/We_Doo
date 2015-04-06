@@ -9,8 +9,8 @@
         <thead>
           <tr> 
             <th> Subject </th>
-            <th> Posted </th>
-            <th> Options </th>
+            <th> Date-Time Posted EST</th>
+            <!-- <th> Options </th> -->
           </tr>
         </thead>
         <tbody>
@@ -37,14 +37,15 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-3">
       <div>
         <%= form_tag search_yelp_path, action: "search", method: "get" do %>
           <%# label :term #put in placeholder styling  %>
-          <%= text_field_tag :term %>
+          <%= text_field_tag :term %><br>
           <%# label :category_filter #put in placeholder styling %>
-          <%= text_field_tag :category_filter%>
-          <button>Search Yelp for Ideas</button>
+          <%= text_field_tag :category_filter%><br>
+          <!-- <i class="fa fa-yelp"></i> -->
+        <button>Search Yelp for Ideas</button>
         <% end %>
         <div id="yelp_search_results"></div>
       </div>
