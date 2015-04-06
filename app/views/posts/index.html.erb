@@ -41,11 +41,11 @@
       <div>
         <%= form_tag search_yelp_path, action: "search", method: "get" do %>
           <%# label :term #put in placeholder styling  %>
-          <%= text_field_tag :term %><br>
+          <%= text_field_tag :term, nil, placeholder: 'e.g. restaurant, food' %><br>
           <%# label :category_filter #put in placeholder styling %>
-          <%= text_field_tag :category_filter%><br>
-          <%= text_field_tag :city%>
-          <%= text_field_tag :state%><br>
+          <%= text_field_tag :category_filter, nil, placeholder: 'e.g. thai, korean'%><br>
+          <%= text_field_tag :city, nil, placeholder: 'e.g. Arlington'%>
+          <%= text_field_tag :state, nil, placeholder: 'e.g. VA'%><br>
           <!-- <i class="fa fa-yelp"></i> -->
         <button>Search Yelp for Ideas</button>
         <% end %>
