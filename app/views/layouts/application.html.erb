@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>We Doo</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="/boostrap.css" rel="stylesheet" type="text/css"> -->
+    <link href="/carousel.css" rel="stylesheet" type="text/css">
 
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/slate/bootstrap.min.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -45,29 +49,35 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= nav_bar fixed: :top, brand: "We Doo", responsive: true do %>
-        <%= menu_group do %>
-            <%= menu_item "Home", root_path %>
-            <%= menu_divider %>
-            <%= drop_down "Features" do %>
-                <%= menu_item "Bridesmaid Dresses", new_dress_path %>
-                <%= menu_item "Bachelorette Party", posts_path %>
-                <%= menu_item "Schedules", bridalshower_index_path %>
-            <% end %>
-            <%= menu_item "Profile", new_profile_path %>
-        <% end %>
-        <%= menu_group pull: :right do %>
-            <% if current_user %>
-                <%= menu_item "Log Out", destroy_user_session_path %>
-            <% else %>
-                <%= form_for @user, url: new_user_session_path(:user), html => {class: "navbar-form pull-right"} do |f| -%>
-                  <p><%= f.text_field :email %></p>
-                  <p><%= f.password_field :password %></p>
-                  <p><%= f.submit "Sign in" %></p>
-                <% end -%>
-            <% end %>
-        <% end %>
-    <% end %>
+<!-- NAVBAR
+================================================== -->
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">We Doo</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/dress">Bridesmaid Dresses</a></li>
+                <li><a href="/bachelorette/posts">Bachelorette Party</a></li>
+                <li><a href="/bridalshower">Schedules</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
 
     <%=yield%>
 

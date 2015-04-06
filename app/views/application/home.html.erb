@@ -1,73 +1,94 @@
-<div class="slideshow">
-    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="active item">
-                <h2>Bridesmaid Dresses</h2>
-                <div class="carousel-caption">
-                  <h3>Say "yes" to the dress!</h3>
-                  <p>Figure out the color and style together!</p>
-                </div>
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Find a dress!</h1>
+              <p>Figure out the color and style together!</p>
+              <p><%= button_to "Take a Look", new_dress_path, method: :get, class: "btn btn-lg btn-primary" %></p>
             </div>
-            <div class="item">
-                <h2>Bachelorette Party</h2>
-                <div class="carousel-caption">
-                  <h3>details, details, details..</h3>
-                  <p>Girls just wanna have fun :)</p>
-                </div>
-            </div>
-            <div class="item">
-                <h2>Schedule</h2>
-                <div class="carousel-caption">
-                  <h3>Are you available?</h3>
-                  <p>Keep all the event dates and people's availability in one spot.</p>
-                </div>
-            </div>
+          </div>
         </div>
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div>
-</div>
+        <div class="item">
+          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Girls just wanna have fun!</h1>
+              <p>details, details, details..</p>
+              <p><%= button_to "Start Planning", posts_path, method: :get, class: "btn btn-lg btn-primary" %></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Are you available?</h1>
+              <p>Keep all the event dates and people's availability in one spot.</p>
+              <p><%= button_to "View Calendar", bridalshower_index_path, method: :get, class: "btn btn-lg btn-primary" %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4">
-      <div class="slideshow"> 
-        <img src="https://s3-us-west-2.amazonaws.com/2015wedo/Sky.jpg?X-Amz-Date=20150406T134901Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=92bca8bfdeb4738b5c143f6a41b32ddc0c713509ff613f3fcafe829503458e07&X-Amz-Credential=ASIAJ3M565ONPQQ7EVJQ/20150406/us-west-2/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=AQoDYXdzEO///////////wEakAIvr%2Bw%2BEhTU7uv2KkzdEb6DMIQnQlxFBqC5zOc71sTkItkSF4ub7VQVA%2B90snYSPFgpqWXche0PTTH5vB3eWC%2BQAgRWckHvpNY6Wmr%2BlVcb3qhkQInviAx3hbnHIVE5xT4YsBgRLAs708cDblaokMjuOWmvvsm08FUTfRogCBqG1RDdbOuQseEmM032RgbbkvhqNeghIsiPOPxBH6Bi2wIZaw0IzYn3O3%2BVxdglvhG7R%2Bdhn5ZEFn4cTmDpZCqJQ%2Bfvz52z1don8NmuKIXnjhZpDusqtCkSwWkKl3Jg91%2Bci5C3eAWE4gfasvhvSlZrUumUXThHwInnNlDNYYrJvvWnuAMqHL0xHSaOzNYd5QILQCDKmoqpBQ%3D%3D" class="img-circle" alt="Circular Image">
-      </div>
-      <h2>Dress</h2>
-      <p>blah blah blah</p>
-      <p><%= link_to new_dress_path do %>
-        <i class="fa fa-female"></i> Make Suggestions
-      <% end %></p>
-    </div>
-    <div class="col-xs-4">
-      <div class="slideshow"> 
-        <img src="../images/125x125.jpg" class="img-circle" alt="Circular Image">
-      </div>
-      <h2>Party</h2>
-      <p>woohooooo</p>
-      <p><%= link_to posts_path do %>
-        <i class="fa fa-glass"></i> Start Planning
-      <% end %></p>
-    </div>
-    <div class="col-xs-4">
-      <div class="slideshow"> 
-        <img src="../images/125x125.jpg" class="img-circle" alt="Circular Image">
-      </div>
-      <h2>Schedules</h2>
-      <p>use a calendar</p>
-      <p><%= link_to bridalshower_index_path do %>
-        <i class="fa fa-calendar"></i> Mark the calendar
-      <% end %></p>
-    </div>
-  </div>
-</div>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="/Sky.jpg" width="140" height="140">
+          <h2>Dress</h2>
+          <p>oOoOo la la~</p>
+          <p><%= link_to new_dress_path do %>
+            <i class="fa fa-female"></i> Make Suggestions
+          <% end %>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>Party</h2>
+          <p>party party party.. party in the USA?</p>
+          <p><%= link_to posts_path do %>
+            <i class="fa fa-glass"></i> Start Planning
+          <% end %></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>Schedule</h2>
+          <p>Who? What? When? Where? Why not..</p>
+          <p><%= link_to bridalshower_index_path do %>
+            <i class="fa fa-calendar"></i> Mark the calendar
+          <% end %></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2015 EmilyChu, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
