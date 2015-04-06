@@ -13,8 +13,9 @@
     </tr>
   </thead>
   <tbody>
-    <% @dress.each do |d| %>
+    <% @dress.each_slice(3) do |row| %>
       <tr>
+        <% row.each do |d| %>
         <td><%= d.name %></td>
         <td><%= image_tag d.image_url(:thumb).to_s %></td>
         <td><%= d.votes.count %></td>
@@ -36,6 +37,7 @@
             <% end %>
           <% end %>
         </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
