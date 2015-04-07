@@ -23,4 +23,5 @@ Rails.application.routes.draw do
 
   resources :bridalshower
   resources :availabilities
+  resources :budget , only: [:index]
 end
