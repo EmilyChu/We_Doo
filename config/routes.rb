@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :bachelorette do 
+  scope :discussion do 
     resources :posts do
       resources :comments do
       end
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get '/yelp' => 'posts#search', as: 'search_yelp'
   end
 
-  resources :bridalshower
+  resources :schedule
   resources :availabilities
   resources :budget , only: [:index, :update, :create, :destroy]
 end

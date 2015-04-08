@@ -1,4 +1,4 @@
-class BridalshowerController < ApplicationController
+class ScheduleController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -44,7 +44,7 @@ class BridalshowerController < ApplicationController
   def destroy
     @availability.destroy
     respond_to do |format|
-      format.html { redirect_to bridalshower_index_path, notice: 'Deleted'}
+      format.html { redirect_to schedule_index_path, notice: 'Deleted'}
       format.json { head :no_content }
     end
   end

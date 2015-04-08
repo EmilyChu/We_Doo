@@ -4,7 +4,7 @@
       <h3> Availability </h3>
     </div>
     <div class="col-md-3">
-      <h3><%= link_to 'New Availablity', new_bridalshower_path %></h3>
+      <h3><%= link_to 'New Availablity', new_schedule_path %></h3>
     </div>
   </div>
 
@@ -31,13 +31,13 @@
             <tr>
               <td><%= a.name %></td>
               <td><%= a.start_at %></td>
-              <td><%= link_to bridalshower_path(a) do %>
+              <td><%= link_to schedule_path(a) do %>
                 <i class="fa fa-info"></i>
               <% end %></td>
-              <td><%= link_to edit_bridalshower_path(a) do %>
+              <td><%= link_to edit_schedule_path(a) do %>
                 <i class="fa fa-pencil"></i>
               <% end %></td>
-              <td><%= link_to bridalshower_path(a), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <td><%= link_to schedule_path(a), method: :delete, data: { confirm: 'Are you sure?' } do %>
                 <i class="fa fa-trash-o"></i>
               <% end %></td>
             </tr>
