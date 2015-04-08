@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :bachelorette do 
+  scope :discussion do 
     resources :posts do
       resources :comments do
       end
