@@ -23,6 +23,13 @@ class BudgetController < ApplicationController
     end
   end
 
+  def destroy
+    @budget = Budget.find(params[:id])
+    @budget.destroy
+
+    redirect_to budget_index_path
+  end
+
   private
     def budget_params
       # params.require(:budget).permit(:category, :cost)
