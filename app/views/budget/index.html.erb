@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <table>
+        <thead>
+          <tr>
+            <th><h3>Category</h3></th>
+            <th><h3>Cost</h3></th>
+            <th><h3>Update</h3></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @budget.each do |b| %>
+            <tr>
+              <td><%= b.dress %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

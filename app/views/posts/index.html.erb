@@ -1,40 +1,60 @@
-<h1>Discussion Forum</h1>
-
-<%= link_to 'Have something to add?', new_post_path %>
-
-<table class="table table-striped table-bordered table-hover">
-  <thead>
-    <tr> 
-      <th> Subject </th>
-      <th> Posted </th>
-      <th> Options </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |p| %>
-      <tr>
-        <td><%= link_to p.title, post_path(p) %> </td>
-        <td><%= p.created_at %> </td>
-      
-        <td><%= link_to 'Edit', edit_post_path(p) %></td>
-        <td><%= link_to 'Remove', post_path(p),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<div>
-  <%= form_tag search_yelp_path, action: "search", method: "get" do %>
-    <%# label :term #put in placeholder styling  %>
-    <%= text_field_tag :term %>
-    <%# label :category_filter #put in placeholder styling %>
-    <%= text_field_tag :category_filter%>
-    <button>Search Yelp for Ideas</button>
-  <% end %>
-  <div id="yelp_search_results"></div>
+<div class="container" >
+  <h2>Discussion Forum</h2></br>
+  <h3><%= link_to 'Have something to add?', new_post_path %></h3>
 </div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr> 
+            <th> Subject </th>
+            <th> Date-Time Posted EST</th>
+            <!-- <th> Options </th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |p| %>
+            <tr>
+              <td><%= link_to p.title, post_path(p) %> </td>
+              <td><%= p.created_at %> </td>
+            
+              <td><%= link_to edit_post_path(p) do %>
+                <i class="fa fa-pencil"></i>
+              <% end %>
+              </td>
+              <td><%= link_to post_path(p), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fa fa-trash-o"></i>
+              <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-4">
+      <div>
+        <%= form_tag search_yelp_path, action: "search", method: "get" do %>
+          <%# label :term #put in placeholder styling  %>
+          <%= text_field_tag :term, nil, placeholder: 'e.g. restaurant, food' %><br>
+          <%# label :category_filter #put in placeholder styling %>
+          <%= text_field_tag :category_filter, nil, placeholder: 'e.g. thai, korean'%><br>
+          <%= text_field_tag :city, nil, placeholder: 'e.g. Arlington'%>
+          <%= text_field_tag :state, nil, placeholder: 'e.g. VA'%><br>
+          <!-- <i class="fa fa-yelp"></i> -->
+        <button>Search Yelp for Ideas</button>
+        <% end %>
+        <div id="yelp_search_results"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 <script type="application/javascript">
   var add_search_results = function(response) {

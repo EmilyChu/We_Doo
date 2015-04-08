@@ -1,4 +1,8 @@
-<table>
+<!-- <div class="container ">
+  <div class="row">
+    <div class="col-lg-4">
+ -->
+<table class='table-responsive'>
   <thead>
     <tr>
       <th>Dress Moniker</th>
@@ -9,27 +13,31 @@
     </tr>
   </thead>
   <tbody>
-    <% @dress.each do |d| %>
+    <% @dress.each_slice(3) do |row| %>
       <tr>
+        <% row.each do |d| %>
         <td><%= d.name %></td>
         <td><%= image_tag d.image_url(:thumb).to_s %></td>
         <td><%= d.votes.count %></td>
         <td>
           <% if current_user %>
-            <%= button_to "Vote", vote_dress_path(d), class: "btn btn-default" %>
+            <%= button_to vote_dress_path(d), class: "btn btn-default" do %>
+              <i class="fa fa-thumbs-o-up"></i>
+            <% end %>
           <% end %>
         </td>
         <td>
           <% if @faves.include? d.id %>
-            <%= form_tag unfavorite_dress_path(d), method: :patch do %>
-              <button class="btn btn-default">Unfavorite</button>
+            <%= button_to unfavorite_dress_path(d), method: :patch, class: "btn btn-default" do %>
+              <i class="fa fa-heart"></i>
             <% end %>
           <% else %>
-            <%= form_tag favorite_dress_path(d), method: :post do %>
-              <button class="btn btn-default">Favorite</button>
+            <%= button_to favorite_dress_path(d), class: "btn btn-default" do %>
+              <i class="fa fa-heart-o"></i>
             <% end %>
           <% end %>
         </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
