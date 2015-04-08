@@ -17,8 +17,10 @@
             <%= form_tag budget_path(b[:id]), action: :update, method: :patch do %>
               <td><%= text_field_tag :cost %>
               <button class="btn btn-default">update</button>
-            <% end %></td>
+              <% end %>
+              </td>
           </tr>
+          <% end %>
           <tr>
           <%= form_tag budget_index_path, action: :create, method: :post do %>
             <td><%= text_field_tag :category, nil, placeholder: 'Category' %></td>
@@ -26,7 +28,7 @@
             <td><button>Create</button></td>
           <% end %>
           </tr>
-          <% end %>
+
         </tbody>
       </table>
     </div>
