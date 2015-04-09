@@ -8,21 +8,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <%= form_tag '/budget/update', action: :update, method: :patch do %>
           <% @budget.each do |b| %>
+          <tr>
             <td><%= b.category %></td>
             <td><%= b.cost %></td>
-            <%= form_tag budget_path(b[:id]), action: :update, method: :patch do %>
-              <td><%= text_field_tag :cost %>
-              <button><i class="fa fa-pencil-square-o"></i></button>
-              </td>
-            <td><%= link_to budget_path(b[:id]), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <i class="fa fa-trash-o"></i>
-              <% end %>
-            </td>
-            <% end %>
-          </tr>
+            <td><input name="<%=b.category%>"</td>
+            <td><%= link_to budget_path(b[:id]), action: :destroy, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa fa-trash-o"></i>
+            <% end %></td>
           <% end %>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td><button>Submit</button></td></tr>
+          <% end %>
+
+          <tr>
           <%= form_tag budget_index_path, action: :create, method: :post do %>
             <td><%= text_field_tag :category, nil, placeholder: 'Category' %></td>
             <td><%= text_field_tag :cost, nil, placeholder: 'Cost' %></td>
