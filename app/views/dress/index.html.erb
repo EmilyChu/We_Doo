@@ -1,38 +1,40 @@
 <div class="container">
-  <h3>Narrow down the choices</h3>
-  <% @dress.each_slice(3) do |row| %>
-    <% row.each do |d| %>
-      <div class="col-md-4">
-        <table>
-          <tbody>
-        <tr>
-          <%= image_tag d.image_url(:thumb).to_s %>
-        </tr>
-        <tr>
-          <td><%= d.name %></td>
-          <td>votes: <%= d.votes.count %></td>
-          <td>
-            <% if current_user %>
-              <%= button_to vote_dress_path(d), class: "btn btn-default" do %>
-                <i class="fa fa-thumbs-o-up"></i>
+  <div class="page_wrap">
+    <h3>Narrow down the choices</h3>
+    <% @dress.each_slice(3) do |row| %>
+      <% row.each do |d| %>
+        <div class="col-md-4">
+          <table>
+            <tbody>
+          <tr>
+            <%= image_tag d.image_url(:thumb).to_s %>
+          </tr>
+          <tr>
+            <td><%= d.name %></td>
+            <td>votes: <%= d.votes.count %></td>
+            <td>
+              <% if current_user %>
+                <%= button_to vote_dress_path(d), class: "btn btn-default" do %>
+                  <i class="fa fa-thumbs-o-up"></i>
+                <% end %>
               <% end %>
-            <% end %>
-          </td>
-          <td>
-            <% if @faves.include? d.id %>
-              <%= button_to unfavorite_dress_path(d), method: :patch, class: "btn btn-default" do %>
-              <i class="fa fa-heart"></i>
+            </td>
+            <td>
+              <% if @faves.include? d.id %>
+                <%= button_to unfavorite_dress_path(d), method: :patch, class: "btn btn-default" do %>
+                <i class="fa fa-heart"></i>
+                <% end %>
+              <% else %>
+                <%= button_to favorite_dress_path(d), class: "btn btn-default" do %>
+                <i class="fa fa-heart-o"></i>
+                <% end %>
               <% end %>
-            <% else %>
-              <%= button_to favorite_dress_path(d), class: "btn btn-default" do %>
-              <i class="fa fa-heart-o"></i>
-              <% end %>
-            <% end %>
-          </td>
-        </tr>
-          </tbody>
-        </table>
-      </div>
+            </td>
+          </tr>
+            </tbody>
+          </table>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

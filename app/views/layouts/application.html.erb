@@ -8,90 +8,62 @@
     <title>We Doo</title>
     
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/slate/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cyborg/bootstrap.min.css">
     <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- <link href="/boostrap.css" rel="stylesheet" type="text/css"> -->
-    <link href="/carousel.css" rel="stylesheet" type="text/css">
+    <!-- <link href="/carousel.css" rel="stylesheet" type="text/css"> -->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-    <style type="text/css">
-    h2{
-        margin: 0;     
-        color: #666;
-        padding-top: 90px;
-        font-size: 52px;
-        font-family: "trebuchet ms", sans-serif;    
-    }
-    .item{
-        background: #333;    
-        text-align: center;
-        /*height: 300px !important;*/
-    }
-
-    .slideshow{
-      margin: 0px;
-    }
-
-    img{
-        margin: 10px;
-    }
-  .bs-example{
-      margin: 20px;
-    }
-    </style>
-
   </head>
   <body>
-<!--     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
 
 <!-- NAVBAR
 ================================================== -->
-    <div class="navbar-wrapper">
+<div class="navbar-wrapper">
+  <div class="container">
+    <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">
-
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a style="top: -18px; position: relative;" class="navbar-brand" href="/"><img src="/logo.svg"></a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/dress">Dress Lookbook</a></li>
-                <li><a href="/discussion/posts">Discussions</a></li>
-                <li><a href="/schedule">Schedule</a></li>
-                <li><a href="/budget">Budget</a></li>
-                <li><a href="/profile/new">Profile</a></li>
-                <li>
-                  <% if current_user %>
-                    <li>Logged in as <%= current_user.email %></li>
-                    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-                  <% else %>
-                    <li><%= link_to "Log in", new_user_session_path %></li>
-                  <% end %>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-        </nav>
-
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a style="top: -18px; position: relative;" class="navbar-brand" href="/"><img src="/logo.svg"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/dress">Dress Lookbook</a></li>
+            <li><a href="/discussion/posts">Discussions</a></li>
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/budget">Budget</a></li>
+            <li><a href="/profile/new">Profile</a></li>
+            <li>
+              <% if current_user %>
+                <li>Logged in as <%= current_user.email %></li>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+              <% else %>
+                <li><%= link_to "Log in", new_user_session_path %></li>
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
+  </div>
+</div>
 
     <%=yield%>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
   </body>
 </html>
