@@ -7,7 +7,8 @@
 
     <title>We Doo</title>
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/slate/bootstrap.min.css">
     <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- <link href="/boostrap.css" rel="stylesheet" type="text/css"> -->
     <link href="/carousel.css" rel="stylesheet" type="text/css">
@@ -27,11 +28,9 @@
     .item{
         background: #333;    
         text-align: center;
-        height: 300px !important;
+        /*height: 300px !important;*/
     }
-    .carousel{
-        margin-top: 20px;
-    }
+
     .slideshow{
       margin: 0px;
     }
@@ -46,8 +45,8 @@
 
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<!--     <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
 
 <!-- NAVBAR
 ================================================== -->
@@ -93,8 +92,6 @@
       </div>
     </div>
 
-    <div class="container">
     <%=yield%>
-</div>
   </body>
 </html>
