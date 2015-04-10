@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 
   resources :schedule
   resources :availabilities
-  resources :budget , only: [:index, :update, :create, :destroy]
+  resources :budget , only: [:index, :create, :destroy]
+
+  patch '/budget/update' => 'budget#update', as: 'udpate_budget'
 end

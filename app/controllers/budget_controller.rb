@@ -13,14 +13,24 @@ class BudgetController < ApplicationController
     end
   end
 
+  # def update
+  #   @budget = Budget.find(params[:id])
+  #   if @budget.update(budget_params)
+  #     redirect_to budget_index_path(@budget)
+  #   else
+  #     flash[:error] = "Something went wrong!"
+  #     render :index 
+  #   end
+  # end
+
   def update
-    @budget = Budget.find(params[:id])
-    if @budget.update(budget_params)
-      redirect_to budget_index_path(@budget)
-    else
-      flash[:error] = "Something went wrong!"
-      render :index 
+    params.each do |cat, amt| 
+      array = ["utf8", "_method", "authenticity_token", "controller","action"]
+      next if array.include?(cat)
+      next if amt == ""
+      Budget.find_by_category(cat).update cost: amt
     end
+    redirect_to budget_index_path
   end
 
   def destroy
