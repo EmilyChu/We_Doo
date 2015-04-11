@@ -1,16 +1,16 @@
 <div class="container">
   <div class="page_wrap">
     <div class="row">
-      <div class="col-md-9">
-        <h3> Availability </h3>
+      <div class="col-md-8">
+        <h2> When is everyone free? </h2>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h3><%= link_to 'New Availablity', new_schedule_path %></h3>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-8">
         <%= month_calendar events: @availability, table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, available| %>
           <%= date.strftime("%d") %>
           <% available.each do |a| %>
@@ -18,7 +18,7 @@
           <% end %>
         <% end %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <table>
           <thead>
             <tr>
