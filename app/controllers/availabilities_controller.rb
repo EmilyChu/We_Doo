@@ -28,7 +28,7 @@ class AvailabilitiesController < ApplicationController
 
     respond_to do |format|
       if @availability.save
-        format.html { redirect_to @availability, notice: 'Availability was successfully created.' }
+        format.html { redirect_to schedule_path(@availability), notice: 'Your Entry was successfully created.' }
         format.json { render :show, status: :created, location: @availability }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AvailabilitiesController < ApplicationController
   def update
     respond_to do |format|
       if @availability.update(availability_params)
-        format.html { redirect_to @availability, notice: 'Availability was successfully updated.' }
+        format.html { redirect_to schedule_path(@availability), notice: 'Your entry was successfully updated.' }
         format.json { render :show, status: :ok, location: @availability }
       else
         format.html { render :edit }

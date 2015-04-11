@@ -1,3 +1,5 @@
+<div class="container">
+<h2>Check your availability below. Edit if necessary.</h2>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -10,5 +12,7 @@
   <%= @availability.start_at %>
 </p>
 
-<%= link_to 'Edit', edit_schedule_path(@availability) %> |
-<%= link_to 'Back', new_schedule_path %>
+<%= link_to 'Edit', edit_schedule_path(@availability) %>
+<%= link_to 'Add More', new_schedule_path %>
+<%= link_to 'Return to Calendar', schedule_index_path %>
+</div>

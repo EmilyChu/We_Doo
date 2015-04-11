@@ -1,4 +1,7 @@
-<div>
+<div class="container">
+<h2>These are my thoughts.. what are yours?</h2>
+
+<div class="container">
 <p> 
 <strong>Subject:</strong>
 <%= @post.title %>
@@ -9,7 +12,7 @@
 </p>
 </div>
 
-<div>
+<div class="container">
 <% @post.comments.each do |c| %>
   <p>
     <strong>Commenter:</strong>
@@ -22,6 +25,7 @@
 <% end %>
 </div>
 
+<div class="container">
 <h2>Add a comment: </h2>
 <%= form_for [@post, @post.comments.build] do |f| %>
   <p>
@@ -36,6 +40,8 @@
     <%= f.submit %>
   </p>
 <% end %>
+<div class="container">
 
-<%= link_to 'Back', new_post_path %> 
+<%= link_to 'Back', posts_path %> 
 <%= link_to 'Edit', edit_post_path(@post) %>
+</div>

@@ -57,3 +57,17 @@ table a:not(.btn), .table a:not(.btn){
 thead{
   color: black;
 }
+
+body, a, p {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.carousel-inner, .navbar-inverse .navbar-nav>li>a{
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.nav>li{
+  color: #666;
+  font-family: 'Shadows Into Light', cursive;
+  text-align: right;
+}
