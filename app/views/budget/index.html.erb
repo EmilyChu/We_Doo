@@ -20,9 +20,12 @@
           <% end %>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td><button>Submit</button></td></tr>
+            <td><strong>Total</strong></td>
+            <td><% subtotal = @budget%>
+              <% total = subtotal.map {|b| b.cost} %>
+              <%= total.reduce(:+) %>
+            </td>
+            <td><button>Update</button></td></tr>
           <% end %>
 
           <tr>
