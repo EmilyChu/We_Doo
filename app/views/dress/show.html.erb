@@ -1,4 +1,10 @@
-<h3> display uploaded dresses here</h3>
+<div class="container">
+  <h2>Dress Uploaded!</h2>
 
-<%= @dress.name %>
-<%= image_tag @dress.image_url(:thumb).to_s %>
+  <h3><%= @dress.name %></h3><br>
+  <%= image_tag @dress.image_url(:thumb).to_s %>
+
+  <h3><%= link_to new_dress_path do %>
+    <i class="fa fa-female"></i> Add another Dress
+  <% end %></h3>
+</div>
