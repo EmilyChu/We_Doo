@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ a:hover {
+  background-color: transparent;
+ }
+
 h2{
     margin: 0;     
     color: #666;
@@ -54,8 +58,9 @@ td{
   margin-top: 10px;
 }
 
-table a:not(.btn), .table a:not(.btn){
+table a:not(.btn), .table a:not(.btn), a:hover{
   color: black;
+
 }
 
 thead{
@@ -99,14 +104,14 @@ td.today {
   background-position: center;
 }
 .first-slide {
-  background-image: url("/ceremony.jpg");
+  background-image: url("/ceremony2.jpg");
 }
 .second-slide {
   background-image: url("/pj.jpg");
 }
 .third-slide {
-  background-image: url("/linz.jpg")
+  background-image: url("/linz2.jpg");
 }
 .fourth-slide {
-  background-image: url("/33.jpg")
+  background-image: url("/33.jpg");
 }
