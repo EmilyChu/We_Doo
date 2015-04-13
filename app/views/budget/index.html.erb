@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-5">
       <table class="table table-condensed">
         <thead>
           <tr>
@@ -27,7 +27,6 @@
             </td>
             <td><button>Update</button></td></tr>
           <% end %>
-
           <tr>
           <%= form_tag budget_index_path, action: :create, method: :post do %>
             <td><%= text_field_tag :category, nil, placeholder: 'Category' %></td>
@@ -38,5 +37,10 @@
         </tbody>
       </table>
     </div>
+    
+    <div class="col-md-7">
+      <img src='/cotton.jpg'>
+    </div>
+    
   </div>
 </div>

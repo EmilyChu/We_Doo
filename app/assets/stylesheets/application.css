@@ -19,8 +19,9 @@ h2{
     color: #666;
     padding-top: 90px;
     font-size: 52px;
-    font-family: "trebuchet ms", sans-serif;    
+    font-family: 'Shadows Into Light', cursive;    
 }
+
 .item{
     background: #333;    
     text-align: center;
@@ -32,17 +33,19 @@ h2{
 }
 
 img{
-    margin: 0px;
+    margin-top: 0px;
 }
+
 .bs-example{
   margin: 20px;
 }
 
 td{
   color: black;
+  font-family: 'Shadows Into Light', cursive;
 }
 
-.page_wrap{
+.dress_wrap{
   margin-top: 100px;
 }
 
@@ -60,6 +63,7 @@ thead{
 
 body, a, p {
     font-family: 'Shadows Into Light', cursive;
+    font-size: large;
 }
 
 .carousel-inner, .navbar-inverse .navbar-nav>li>a{
@@ -70,6 +74,10 @@ body, a, p {
   color: #666;
   font-family: 'Shadows Into Light', cursive;
   text-align: right;
+}
+
+.featurette-heading{
+  font-family: "trebuchet ms", sans-serif;
 }
 
 

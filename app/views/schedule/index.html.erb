@@ -1,11 +1,13 @@
 <div class="container">
-  <div class="page_wrap">
+  <div class="schedule_wrap">
     <div class="row">
       <div class="col-md-8">
         <h2> When is everyone free? </h2>
       </div>
       <div class="col-md-4">
-        <h3><%= link_to 'New Availablity', new_schedule_path %></h3>
+        <h2><%= link_to new_schedule_path do %>
+        <i class="fa fa-calendar"></i> Mark the calendar!
+        <% end %></h2>
       </div>
     </div>
 

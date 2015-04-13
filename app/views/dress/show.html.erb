@@ -1,14 +1,16 @@
 <div class="container">
-  <h2>Dress Uploaded!</h2>
+    <h2></h2>
+    <div class="col-md-4 col-md-offset-4">
 
-  <h3><%= @dress.name %></h3><br>
-  <%= image_tag @dress.image_url(:thumb).to_s %>
+    <h3><%= @dress.name %></h3><br>
+    <%= image_tag @dress.image_url(:thumb).to_s %>
 
-  <h3><%= link_to new_dress_path do %>
-    <i class="fa fa-female"></i> Add another Dress
-  <% end %></h3>
+    <h3><%= link_to new_dress_path do %>
+      <i class="fa fa-female"></i> Add another Dress
+    <% end %></h3>
 
-  <h3><%= link_to dress_index_path do %>
-    <i class="fa fa-picture-o"></i> See current suggestions
-  <% end %></h3>
+    <h3><%= link_to dress_index_path do %>
+      <i class="fa fa-picture-o"></i> See current suggestions
+    <% end %></h3>
+  </div>
 </div>

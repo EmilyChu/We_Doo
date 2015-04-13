@@ -1,62 +1,59 @@
-<div class="page_wrap">
+<div class="dress_wrap">
   <div class="container">
-    <div class="lvm-list-cards lvm-type-website-theme lvm-name-preview_modals lvm-layout-inline">  
-      <div class="scroll-top lvm-state-hidden"><i></i>
-      </div>  
-      <ul>            
-        <% @dress.each do |d| %>
-          <div class="col-sm-4">
-            <div class="panel panel-default">
-              <li>      
-                <div class="lvm-card lvm-type-website-theme lvm-name-card-website-theme-vintage lvm-layout-inline lvm-has-details   lvm-state-invisible " data-id="vintage" style="width:320px;">        
-                  <div class="card-image">        <!-- image:  -->    
-                    <figure  style="height:420px; width:320px;" >            
-                      <img src="<%=d.image_url(:thumb)%>"  height="400"  width="320"  alt=""  style=" ">
-                    </figure>
-                  </div>
-                  <div class="lvm-details">    
-                    <div class="lvm-card-details-website-theme lvm-name-card-details-website-theme-vintage"> 
-                      <div class="container">
-                        <div class="col-sm-4">
-                          <p class="lead"><%= d.name %></p>  
-                          <p class="theme-description">
-                            <% if current_user %>
-                              <%= button_to vote_dress_path(d), class: "btn btn-default" do %>
-                                <i class="fa fa-thumbs-o-up"></i>
-                              <% end %>
-                            <% end %>
-                            <% if @faves.include? d.id %>
-                              <%= button_to unfavorite_dress_path(d), method: :patch, class: "btn btn-default" do %>
-                                <i class="fa fa-heart"></i>
-                              <% end %>
-                            <% else %>
-                              <%= button_to favorite_dress_path(d), class: "btn btn-default" do %>
-                                <i class="fa fa-heart-o"></i>
-                              <% end %>
-                            <% end %>
-                          </p>
-                          <p class="theme-description">votes: <%= d.votes.count %></p>
-                        </div>
-                      </div>
-                    </div>  
-                  </div>
-                </div>    
-              </li>
-            </div>
-          </div>
-        <% end %>
+    <div class="scroll-top lvm-state-hidden"><i></i>
+    </div>  
+    <ul>            
+      <% @dress.each do |d| %>
         <div class="col-sm-4">
-          <div class="panel panel-default">
-            <figure  style="height:420px; width:320px;" >
-              <img src="/pikachu.jpg" height="300"  width="320"  alt=""  style=" ">
-              <h3><%= link_to new_dress_path do %>
-                <i class="fa fa-female"></i> Make a dress suggestion
-              <% end %></h3>
-            </figure>
-          </div>
+        <div class="panel panel-default">
+          <li>      
+            <div class="card-image">
+              <figure  style="height:420px; width:320px;" >            
+                <img src="<%=d.image_url(:thumb)%>"  height="400"  width="320"  alt=""  style=" ">
+              </figure>
+            </div>
+            <div class="container">
+              <div class="col-sm-4">
+                
+                <p class="lead"><%= d.name %></p>  
+                <div class="col-sm-4">
+                <p><% if current_user %>
+                    <%= button_to vote_dress_path(d), class: "btn btn-default" do %>
+                      <i class="fa fa-thumbs-o-up"></i>
+                    <% end %>
+                  <% end %>
+                </p></div>
+
+                <div class="col-sm-4"><p><% if @faves.include? d.id %>
+                    <%= button_to unfavorite_dress_path(d), method: :patch, class: "btn btn-default" do %>
+                      <i class="fa fa-heart"></i>
+                    <% end %>
+                  <% else %>
+                    <%= button_to favorite_dress_path(d), class: "btn btn-default" do %>
+                      <i class="fa fa-heart-o"></i>
+                    <% end %>
+                  <% end %>
+                </p></div>
+                
+                <div class="col-sm-3"><p># of Votes: <%= d.votes.count %></p></div>
+              
+              </div>
+            </div>
+          </li>
         </div>
-      </ul>
-    </div>
+        </div>
+      <% end %>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <figure  style="height:420px; width:320px;" >
+            <img src="/pikachu.jpg" height="300"  width="320"  alt=""  style=" ">
+            <h3><%= link_to new_dress_path do %>
+              <i class="fa fa-female"></i> Make a dress suggestion
+            <% end %></h3>
+          </figure>
+        </div>
+      </div>
+    </ul>
   </div>
 </div>
 
