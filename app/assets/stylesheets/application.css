@@ -80,4 +80,6 @@ body, a, p {
   font-family: "trebuchet ms", sans-serif;
 }
 
-
+.budget_pic > img{
+  margin-top: 100px;
+}
