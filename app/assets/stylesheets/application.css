@@ -43,6 +43,7 @@ img{
 td{
   color: black;
   font-family: 'Shadows Into Light', cursive;
+  font-size: large;
 }
 
 .dress_wrap{
@@ -81,5 +82,31 @@ body, a, p {
 }
 
 .budget_pic > img{
-  margin-top: 100px;
+  width: 95%;
+  margin: 0 2.5%;
+}
+
+.calendar td {
+  height: 100px;
+  min-width: 100px;
+}
+
+td.today {
+  background: yellow;
+}
+
+.carousel .item {
+  background-position: center;
+}
+.first-slide {
+  background-image: url("/ceremony.jpg");
+}
+.second-slide {
+  background-image: url("/pj.jpg");
+}
+.third-slide {
+  background-image: url("/linz.jpg")
+}
+.fourth-slide {
+  background-image: url("/33.jpg")
 }

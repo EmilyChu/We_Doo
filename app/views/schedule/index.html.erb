@@ -13,8 +13,11 @@
 <br>
     <div class="row">
       <div class="col-md-8">
-        <%= month_calendar events: @availability, table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, available| %>
+        <%= month_calendar events: @availability, table: {class: "calendar table table-bordered"} do |date, available| %>
           <%= date.strftime("%d") %>
+          <% if date == Date.today %>
+            <strong>Today!</strong>
+          <% end %>
           <% available.each do |a| %>
             <div><%= a.name %></div>
           <% end %>

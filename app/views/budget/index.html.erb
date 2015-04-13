@@ -1,12 +1,8 @@
 <div class="container">
+  <h2>Shared Expenses</h2>
   <div class="row">
     <div class="col-md-6">
       <table class="table table-condensed">
-        <thead>
-          <tr>
-            <th><h2>Shared Expenses</h2></th>
-          </tr>
-        </thead>
         <tbody>
           <%= form_tag '/budget/update', action: :update, method: :patch do %>
           <% @budget.each do |b| %>

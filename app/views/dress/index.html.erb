@@ -2,11 +2,12 @@
   <div class="container">
     <div class="scroll-top lvm-state-hidden"><i></i>
     </div>  
-    <ul>            
-      <% @dress.each do |d| %>
-        <div class="col-sm-4">
-        <div class="panel panel-default">
-          <li>      
+            
+    <% @dress.in_groups_of(3, false) do |dresses| %>
+      <div class="row">
+        <% dresses.each do |d| %>
+          <div class="col-sm-4">
+          <div class="panel panel-default">
             <div class="card-image">
               <figure  style="height:420px; width:320px;" >            
                 <img src="<%=d.image_url(:thumb)%>"  height="400"  width="320"  alt=""  style=" ">
@@ -39,21 +40,22 @@
               
               </div>
             </div>
-          </li>
-        </div>
-        </div>
-      <% end %>
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <figure  style="height:420px; width:320px;" >
-            <img src="/pikachu.jpg" height="300"  width="320"  alt=""  style=" ">
-            <h3><%= link_to new_dress_path do %>
-              <i class="fa fa-female"></i> Make a dress suggestion
-            <% end %></h3>
-          </figure>
-        </div>
+          </div>
+          </div>
+        <% end %>
       </div>
-    </ul>
+    <% end %>
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <figure  style="height:420px; width:320px;" >
+          <img src="/pikachu.jpg" height="300"  width="320"  alt=""  style=" ">
+          <h3><%= link_to new_dress_path do %>
+            <i class="fa fa-female"></i> Make a dress suggestion
+          <% end %></h3>
+        </figure>
+      </div>
+    </div>
+
   </div>
 </div>
 
