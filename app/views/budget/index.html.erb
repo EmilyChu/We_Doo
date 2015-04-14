@@ -2,39 +2,42 @@
   <h2>Shared Expenses</h2>
   <div class="row">
     <div class="col-md-6">
-      <table class="table table-condensed">
+      <table class="table table-condensed budget-table">
         <tbody>
           <%= form_tag '/budget/update', action: :update, method: :patch do %>
-          <% @budget.each do |b| %>
-          <tr>
-            <td><%= b.category %></td>
-            <td><%= b.cost %></td>
-            <td><input name="<%=b.category%>"</td>
-            <td><%= link_to budget_path(b[:id]), action: :destroy, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="fa fa-trash-o"></i>
-            <% end %></td>
+            <% @budget.each do |b| %>
+              <tr>
+                <td><%= b.category %></td>
+                <td><%= b.cost %></td>
+                <td><input name="<%=b.category%>"></td>
+                <td>
+                  <%= link_to budget_path(b[:id]), action: :destroy, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="fa fa-trash-o"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td><% subtotal = @budget%>
+                <% total = subtotal.map {|b| b.cost} %>
+                <%= total.reduce(:+) %>
+              </td>
+              <td><button>Update</button></td>
+            </tr>
           <% end %>
-          </tr>
           <tr>
-            <td><strong>Total</strong></td>
-            <td><% subtotal = @budget%>
-              <% total = subtotal.map {|b| b.cost} %>
-              <%= total.reduce(:+) %>
-            </td>
-            <td><button>Update</button></td></tr>
-          <% end %>
-          <tr>
-          <%= form_tag budget_index_path, action: :create, method: :post do %>
-            <td><%= text_field_tag :category, nil, placeholder: 'Category' %></td>
-            <td><%= text_field_tag :cost, nil, placeholder: 'Cost' %></td>
-            <td><button>Create</button></td>
-          <% end %>
+            <%= form_tag budget_index_path, action: :create, method: :post do %>
+              <td><%= text_field_tag :category, nil, placeholder: 'Category' %></td>
+              <td><%= text_field_tag :cost, nil, placeholder: 'Cost' %></td>
+              <td><button>Create</button></td>
+            <% end %>
           </tr>
         </tbody>
       </table>
     </div>
-    
-    <div class="col-md-6">
+
+    <div class="col-md-6 hacky-column">
       <div class="budget_pic">
         <img src='/cotton.jpg'>
       </div>

@@ -87,8 +87,11 @@ body, a, p {
 }
 
 .budget_pic > img{
-  width: 95%;
-  margin: 0 2.5%;
+  width: 90%;
+  float: right;
+}
+.hacky-column {
+  z-index: -1;
 }
 
 .calendar td {
@@ -104,14 +107,15 @@ td.today {
   background-position: center;
 }
 .first-slide {
-  background-image: url("/ceremony2.jpg");
+  background-image: url("/umbrella.jpg");
 }
 .second-slide {
-  background-image: url("/pj.jpg");
+  background-image: url("/festive.jpg");
 }
 .third-slide {
-  background-image: url("/linz2.jpg");
+  background-image: url("/party.jpg");
 }
 .fourth-slide {
-  background-image: url("/33.jpg");
+  background-image: url("/flowers.jpg");
 }
+
