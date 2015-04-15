@@ -105,17 +105,18 @@ td.today {
 
 .carousel .item {
   background-position: center;
+  background-size: cover;
 }
 .first-slide {
-  background-image: url("/umbrella.jpg");
+  background-image: url("/ceremony.jpg");
 }
 .second-slide {
-  background-image: url("/festive.jpg");
+  background-image: url("/pjs2.jpg");
 }
 .third-slide {
-  background-image: url("/party.jpg");
+  background-image: url("/joanne.jpg");
 }
 .fourth-slide {
-  background-image: url("/flowers.jpg");
+  background-image: url("/budget.jpg");
 }
 
