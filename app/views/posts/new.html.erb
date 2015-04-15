@@ -1,4 +1,5 @@
-<h3> Bachelorette Bash Planning </h3>
+<div class="container">
+<h2> It's all in the details...</h2><br>
 
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -16,10 +17,10 @@
 
 <%= form_for @post do |f| %> 
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title %><br>
   <%= f.label :body %>
   <%= f.text_field :body %>
   <button>Post</button>
 <% end %>
 
-<%= link_to 'Back to Homepage', root_path %>
+</div>

@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if params[:post]
+      @post=Post.new post_params 
+    else
+      @post= Post.new
+    end 
   end
 
   def create

@@ -13,3 +13,110 @@
  *= require_tree .
  *= require_self
  */
+
+ a:hover {
+  background-color: transparent;
+ }
+
+h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: 'Shadows Into Light', cursive;    
+}
+
+.item{
+    background: #333;    
+    text-align: center;
+    /*height: 300px !important;*/
+}
+
+.slideshow{
+  margin: 0px;
+}
+
+img{
+    margin-top: 0px;
+}
+
+.bs-example{
+  margin: 20px;
+}
+
+td{
+  color: black;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: large;
+}
+
+.dress_wrap{
+  margin-top: 100px;
+}
+
+.logo{
+  margin-top: 10px;
+}
+
+table a:not(.btn), .table a:not(.btn), a:hover{
+  color: black;
+
+}
+
+thead{
+  color: blue;
+}
+
+body, a, p {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: large;
+}
+
+.carousel-inner, .navbar-inverse .navbar-nav>li>a{
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.nav>li{
+  color: #666;
+  font-family: 'Shadows Into Light', cursive;
+  text-align: right;
+}
+
+.featurette-heading{
+  font-family: "trebuchet ms", sans-serif;
+}
+
+.budget_pic > img{
+  width: 90%;
+  float: right;
+}
+.hacky-column {
+  z-index: -1;
+}
+
+.calendar td {
+  height: 100px;
+  min-width: 100px;
+}
+
+td.today {
+  background: yellow;
+}
+
+.carousel .item {
+  background-position: center;
+  background-size: cover;
+}
+.first-slide {
+  background-image: url("/ceremony.jpg");
+}
+.second-slide {
+  background-image: url("/pjs2.jpg");
+}
+.third-slide {
+  background-image: url("/joanne.jpg");
+}
+.fourth-slide {
+  background-image: url("/budget.jpg");
+}
+

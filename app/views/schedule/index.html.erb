@@ -1,49 +1,56 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-9">
-      <h3> Availability </h3>
+  <div class="schedule_wrap">
+    <div class="row">
+      <div class="col-md-8">
+        <h2> When is everyone free? </h2>
+      </div>
+      <div class="col-md-4">
+        <%= link_to new_schedule_path do %>
+          <h2><i class="fa fa-calendar"></i> Mark the calendar!
+        <% end %></h2>
+      </div>
     </div>
-    <div class="col-md-3">
-      <h3><%= link_to 'New Availablity', new_schedule_path %></h3>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-9">
-      <%= month_calendar events: @availability, table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, available| %>
-        <%= date.strftime("%d") %>
-        <% available.each do |a| %>
-          <div><%= a.name %></div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="col-md-3">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Start time</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @availability.each do |a| %>
-            <tr>
-              <td><%= a.name %></td>
-              <td><%= a.start_at %></td>
-              <td><%= link_to schedule_path(a) do %>
-                <i class="fa fa-info"></i>
-              <% end %></td>
-              <td><%= link_to edit_schedule_path(a) do %>
-                <i class="fa fa-pencil"></i>
-              <% end %></td>
-              <td><%= link_to schedule_path(a), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <i class="fa fa-trash-o"></i>
-              <% end %></td>
-            </tr>
+<br>
+    <div class="row">
+      <div class="col-md-8">
+        <%= month_calendar events: @availability, table: {class: "calendar table table-bordered"} do |date, available| %>
+          <%= date.strftime("%d") %>
+          <% if date == Date.today %>
+            <strong>Today!</strong>
           <% end %>
-        </tbody>
-      </table>
+          <% available.each do |a| %>
+            <div><%= a.name %></div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Start time</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @availability.each do |a| %>
+              <tr>
+                <td><%= a.name %></td>
+                <td><%= a.start_at %></td>
+                <td><%= link_to schedule_path(a) do %>
+                  <i class="fa fa-info"></i>
+                <% end %></td>
+                <td><%= link_to edit_schedule_path(a) do %>
+                  <i class="fa fa-pencil"></i>
+                <% end %></td>
+                <td><%= link_to schedule_path(a), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fa fa-trash-o"></i>
+                <% end %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
